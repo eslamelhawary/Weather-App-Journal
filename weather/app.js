@@ -1,6 +1,7 @@
 // declaring my variables
-      let d = new Date();
-      let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+let d = new Date();
+let month = d.getMonth() + 1;
+      let newDate = month + '.' + d.getDate() + '.' + d.getFullYear();
       const api_key = 'ffbc382d6eef1dba7fb9f8da70ccd365';
       const generate_btn = document.querySelector('#generate');
       const date_output = document.getElementById('date');
@@ -13,7 +14,7 @@
 
       let feeling_text = document.getElementById('feelings').value;
 
-      const url = `http://api.openweathermap.org/data/2.5/weather?zip=${zip_code}&appid=${api_key}`;
+      const url = `http://api.openweathermap.org/data/2.5/weather?zip=${zip_code}&appid=${api_key}&units=metric`;
 
       if (zip_code === "") { alert("Please enter a zip code to search it!") }
       
